@@ -17,6 +17,19 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Tipo</label>
+            <select class="form-control" id="type_id" name="type_id">
+                <option value="">Seleziona il tipo</option>
+                @foreach ($types as $type)
+                    <option @selected($type->id == old('type_id',$project->type_id) ) value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        @error('type_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         
         <div class="mb-3">
             <label for="cover_image" class="form-label">Immagine</label>

@@ -13,6 +13,10 @@
 
 
     <div>
+        <strong>Tipo:</strong> {{ $project->type ? $project->type->name : 'non ha un tipo' }}
+    </div>
+
+    <div>
         <strong>Slug:</strong> {{ $project->slug }}
     </div>
 
